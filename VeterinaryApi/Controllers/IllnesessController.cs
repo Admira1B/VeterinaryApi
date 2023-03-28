@@ -9,27 +9,27 @@ namespace VeterinaryApi.Controllers
     public class IllnesessController
     {
         [HttpGet]
-        public ActionResult<List<Illness>> GetIllnesesses()
+        public async Task<ActionResult<List<Illness>>> GetIllnesesses()
         {
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Illness> GetIllness(int id)
+        public async Task<ActionResult<Illness>> GetIllness(int id)
         {
         }
 
         [HttpPost]
-        public ActionResult AddNewIllness(Illness illness)
+        public async Task<ActionResult> AddNewIllness(Illness illness)
         {
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeleteIllness(int id)
+        public async Task<ActionResult> DeleteIllness(int id)
         {
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Illness> UpdateIllness(Illness illness)
+        public async Task<ActionResult<Illness>> UpdateIllness(Illness illness)
         {
         }
     }

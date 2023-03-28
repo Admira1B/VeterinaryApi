@@ -9,27 +9,27 @@ namespace VeterinaryApi.Controllers
     public class AppointmentController
     {
         [HttpGet]
-        public ActionResult<List<Appointment>> GetAppointments()
+        public async Task<ActionResult<List<Appointment>>> GetAppointments()
         {
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Appointment> GetAppointment(int id)
+        public async Task<ActionResult<Appointment>> GetAppointment(int id)
         {
         }
 
         [HttpPost]
-        public ActionResult AddNewAppointment(Appointment appointment)
+        public async Task<ActionResult> AddNewAppointment(Appointment appointment)
         {
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeleteAppointment(int id)
+        public async Task<ActionResult> DeleteAppointment(int id)
         {
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Pet> UpdateAppointment(Appointment appointment)
+        public async Task<ActionResult<Pet>> UpdateAppointment(Appointment appointment)
         {
         }
     }

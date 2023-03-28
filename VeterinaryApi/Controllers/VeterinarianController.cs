@@ -9,27 +9,27 @@ namespace VeterinaryApi.Controllers
     public class VeterinarianController
     {
         [HttpGet]
-        public ActionResult<List<Veterinarian>> GetVeterinarians()
+        public async Task<ActionResult<List<Veterinarian>>> GetVeterinarians()
         {
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Veterinarian> GetVeterinarian(int id)
+        public async Task<ActionResult<Veterinarian>> GetVeterinarian(int id)
         {
         }
 
         [HttpPost]
-        public ActionResult AddNewVeterinarian(Veterinarian veterinarian)
+        public async Task<ActionResult> AddNewVeterinarian(Veterinarian veterinarian)
         {
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeleteVeterinarian(int id)
+        public async Task<ActionResult> DeleteVeterinarian(int id)
         {
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Veterinarian> UpdateVeterinarian(Veterinarian veterinarian)
+        public async Task<ActionResult<Veterinarian>> UpdateVeterinarian(Veterinarian veterinarian)
         {
         }
     }

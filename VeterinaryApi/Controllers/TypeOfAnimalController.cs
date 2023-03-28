@@ -9,27 +9,27 @@ namespace VeterinaryApi.Controllers
     public class TypeOfAnimalController
     {
         [HttpGet]
-        public ActionResult<List<TypeOfAnimal>> GetTypesOfAnimals()
+        public async Task<ActionResult<List<TypeOfAnimal>>> GetTypesOfAnimals()
         {
         }
 
         [HttpGet("{id}")]
-        public ActionResult<TypeOfAnimal> GetTypeOfAnimal(int id)
+        public async Task<ActionResult<TypeOfAnimal>> GetTypeOfAnimal(int id)
         {
         }
 
         [HttpPost]
-        public ActionResult AddNewTypeOfAnimal(TypeOfAnimal type)
+        public async Task<ActionResult> AddNewTypeOfAnimal(TypeOfAnimal type)
         {
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeleteTypeOfAnimal(int id)
+        public async Task<ActionResult> DeleteTypeOfAnimal(int id)
         {
         }
 
         [HttpPut("{id}")]
-        public ActionResult<TypeOfAnimal> UpdateTypeOfAnimal(TypeOfAnimal type)
+        public async Task<ActionResult<TypeOfAnimal>> UpdateTypeOfAnimal(TypeOfAnimal type)
         {
         }
     }
