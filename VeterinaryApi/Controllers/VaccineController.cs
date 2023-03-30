@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VeterinaryApi.Dtos.VaccineDtos;
 using VeterinaryApi.Models;
 
 namespace VeterinaryApi.Controllers
@@ -9,17 +10,17 @@ namespace VeterinaryApi.Controllers
     public class VaccineController
     {
         [HttpGet]
-        public async Task<ActionResult<List<Vaccine>>> GetVaccines()
+        public async Task<ActionResult<List<GetVaccineDto>>> GetVaccines()
         {
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Vaccine>> GetVaccine(int id)
+        public async Task<ActionResult<GetVaccineDto>> GetVaccine(int id)
         {
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddNewVaccine(Vaccine vaccine)
+        public async Task<ActionResult<GetVaccineDto>> AddNewVaccine(AddVaccineDto vaccineDto)
         {
         }
 
@@ -29,7 +30,7 @@ namespace VeterinaryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Vaccine>> UpdateVaccine(Vaccine vaccine)
+        public async Task<ActionResult<GetVaccineDto>> UpdateVaccine(UpdateVaccineDto vaccineDto)
         {
         }
     }

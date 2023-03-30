@@ -1,6 +1,6 @@
-﻿namespace VeterinaryApi.Models
+﻿namespace VeterinaryApi.Dtos.VaccineDtos
 {
-    public class Vaccine
+    public class GetVaccineDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
