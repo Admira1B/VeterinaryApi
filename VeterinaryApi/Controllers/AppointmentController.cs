@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VeterinaryApi.Dtos.AppointmentDtos;
 using VeterinaryApi.Models;
 
 namespace VeterinaryApi.Controllers
@@ -9,17 +10,17 @@ namespace VeterinaryApi.Controllers
     public class AppointmentController
     {
         [HttpGet]
-        public async Task<ActionResult<List<Appointment>>> GetAppointments()
+        public async Task<ActionResult<List<GetAppointmentDto>>> GetAppointments()
         {
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Appointment>> GetAppointment(int id)
+        public async Task<ActionResult<GetAppointmentDto>> GetAppointment(int id)
         {
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddNewAppointment(Appointment appointment)
+        public async Task<ActionResult<GetAppointmentDto>> AddNewAppointment(AddAppointmentDto appointmentDto)
         {
         }
 
@@ -29,7 +30,7 @@ namespace VeterinaryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Pet>> UpdateAppointment(Appointment appointment)
+        public async Task<ActionResult<GetAppointmentDto>> UpdateAppointment(UpdateAppointmentDto appointmentDto)
         {
         }
     }
