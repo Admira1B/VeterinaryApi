@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VeterinaryApi.Dtos.IllnessesDto;
 using VeterinaryApi.Models;
 
 namespace VeterinaryApi.Controllers
@@ -6,20 +7,20 @@ namespace VeterinaryApi.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class IllnesessController
+    public class IllnessController
     {
         [HttpGet]
-        public async Task<ActionResult<List<Illness>>> GetIllnesesses()
+        public async Task<ActionResult<List<GetIllnessDto>>> GetIllnesesses()
         {
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Illness>> GetIllness(int id)
+        public async Task<ActionResult<GetIllnessDto>> GetIllness(int id)
         {
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddNewIllness(Illness illness)
+        public async Task<ActionResult<GetIllnessDto>> AddNewIllness(AddIllnessDto illnessDto)
         {
         }
 
@@ -29,7 +30,7 @@ namespace VeterinaryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Illness>> UpdateIllness(Illness illness)
+        public async Task<ActionResult<UpdateIllnessDto>> UpdateIllness(Illness illnessDto)
         {
         }
     }
