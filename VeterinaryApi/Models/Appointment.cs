@@ -8,5 +8,6 @@
         public int PetId { get; set; }
         public Veterinarian Veterinarian { get; set; }
         public int VeterinarianId { get; set; }
+        public DateTimeOffset EditDate { get; set; }
     }
 }
