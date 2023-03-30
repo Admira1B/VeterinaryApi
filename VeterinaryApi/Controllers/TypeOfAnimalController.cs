@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VeterinaryApi.Dtos.TypeOfAnimalDtos;
 using VeterinaryApi.Models;
 
 namespace VeterinaryApi.Controllers
@@ -9,17 +10,17 @@ namespace VeterinaryApi.Controllers
     public class TypeOfAnimalController
     {
         [HttpGet]
-        public async Task<ActionResult<List<TypeOfAnimal>>> GetTypesOfAnimals()
+        public async Task<ActionResult<List<GetTypeOfAnimalDto>>> GetTypesOfAnimals()
         {
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<TypeOfAnimal>> GetTypeOfAnimal(int id)
+        public async Task<ActionResult<GetTypeOfAnimalDto>> GetTypeOfAnimal(int id)
         {
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddNewTypeOfAnimal(TypeOfAnimal type)
+        public async Task<ActionResult<GetTypeOfAnimalDto>> AddNewTypeOfAnimal(AddTypeOfAnimalDto typeDto)
         {
         }
 
@@ -29,7 +30,7 @@ namespace VeterinaryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<TypeOfAnimal>> UpdateTypeOfAnimal(TypeOfAnimal type)
+        public async Task<ActionResult<GetTypeOfAnimalDto>> UpdateTypeOfAnimal(UpdateTypeOfAnimalDto typeDto)
         {
         }
     }
