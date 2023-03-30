@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VeterinaryApi.Dtos.VeterinarianDtos;
 using VeterinaryApi.Models;
 
 namespace VeterinaryApi.Controllers
@@ -9,33 +10,28 @@ namespace VeterinaryApi.Controllers
     public class VeterinarianController
     {
         [HttpGet]
-        public async Task<ActionResult<List<Veterinarian>>> GetVeterinarians()
+        public async Task<ActionResult<List<GetVeterinarianDto>>> GetVeterinarians()
         {
-            return null;
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Veterinarian>> GetVeterinarian(int id)
+        public async Task<ActionResult<GetVeterinarianDto>> GetVeterinarian(int id)
         {
-            return null;
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddNewVeterinarian(Veterinarian veterinarian)
+        public async Task<ActionResult<GetVeterinarianDto>> AddNewVeterinarian(AddVeterinarianDto veterinarianDto)
         {
-            return null;
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteVeterinarian(int id)
         {
-            return null;
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Veterinarian>> UpdateVeterinarian(Veterinarian veterinarian)
+        public async Task<ActionResult<GetVeterinarianDto>> UpdateVeterinarian(UpdateVeterinarianDto veterinarianDto)
         {
-            return null;
         }
     }
 }

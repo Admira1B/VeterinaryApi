@@ -1,6 +1,8 @@
-﻿namespace VeterinaryApi.Models
+﻿using VeterinaryApi.Models;
+
+namespace VeterinaryApi.Dtos.VeterinarianDtos
 {
-    public class Veterinarian
+    public class GetVeterinarianDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
