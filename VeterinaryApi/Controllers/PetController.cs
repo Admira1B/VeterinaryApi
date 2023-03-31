@@ -20,7 +20,7 @@ namespace VeterinaryApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<GetPetDto>> AddNewPet(Pet petDto)
+        public async Task<ActionResult<GetPetDto>> AddNewPet(AddPetDto petDto)
         {
         }
 
@@ -30,7 +30,7 @@ namespace VeterinaryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<GetPetDto>> UpdatePet(Pet petDto)
+        public async Task<ActionResult<GetPetDto>> UpdatePet(UpdatePetDto petDto)
         {
         }
     }

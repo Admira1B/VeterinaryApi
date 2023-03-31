@@ -30,7 +30,7 @@ namespace VeterinaryApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<UpdateIllnessDto>> UpdateIllness(Illness illnessDto)
+        public async Task<ActionResult<GetIllnessDto>> UpdateIllness(UpdateIllnessDto illnessDto)
         {
         }
     }

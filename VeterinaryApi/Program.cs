@@ -11,6 +11,7 @@ namespace VeterinaryApi
 
             builder.Services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SqlExpressConnection")));
+            builder.Services.AddAutoMapper(typeof(Program).Assembly);
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
