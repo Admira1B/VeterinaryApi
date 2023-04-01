@@ -1,5 +1,6 @@
-using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
 using VeterinaryApi.Data;
+using VeterinaryApi.Services.AppointmentService;
 
 namespace VeterinaryApi
 {
@@ -12,6 +13,11 @@ namespace VeterinaryApi
             builder.Services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SqlExpressConnection")));
             builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+            #region MyServices
+            builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+            #endregion
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
