@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using VeterinaryApi.Data;
 using VeterinaryApi.Dtos.AppointmentDtos;
 using VeterinaryApi.Models;
@@ -31,26 +30,25 @@ namespace VeterinaryApi.Services.AppointmentService
         public async Task<GetAppointmentDto> AddNewAppointment(AddAppointmentDto appointmentDto)
         {
             var newAppointment = _mapper.Map<Appointment>(appointmentDto);
-            _dataContext.Appointments.Add(newAppointment);
+            await _dataContext.Appointments.AddAsync(newAppointment);
             await _dataContext.SaveChangesAsync();
 
             return _mapper.Map<GetAppointmentDto>(newAppointment);
         }
 
-        public void DeleteAppointment(int id)
+        public async Task DeleteAppointment(int id)
         {
             _dataContext.Remove(id);
+            await _dataContext.SaveChangesAsync();
         }
 
-        public async Task<GetAppointmentDto> UpdateAppointment(int id, UpdateAppointmentDto appointmentDto)
+        public async Task UpdateAppointment(int id, UpdateAppointmentDto appointmentDto)
         {
             var appointment = await _dataContext.Appointments.FindAsync(id);
 
             _mapper.Map(appointmentDto, appointment);
             appointment.Id = id;
             await _dataContext.SaveChangesAsync();
-
-            return _mapper.Map<GetAppointmentDto>(appointment);
         }
     }
 }

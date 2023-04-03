@@ -32,8 +32,8 @@ namespace VeterinaryApi.Controllers
         [HttpPost]
         public async Task<ActionResult<GetAppointmentDto>> AddNewAppointment(AddAppointmentDto appointmentDto)
         {
-            await _service.AddNewAppointment(appointmentDto);
-            return Ok();
+            var newAppointment = await _service.AddNewAppointment(appointmentDto);
+            return Ok(newAppointment);
         }
 
         [HttpDelete("{id}")]
@@ -51,6 +51,7 @@ namespace VeterinaryApi.Controllers
         public async Task<ActionResult<GetAppointmentDto>> UpdateAppointment(int id, UpdateAppointmentDto appointmentDto)
         {
             var appointment = await _service.GetAppointment(id);
+
             if (appointment is null)
                 return NotFound();
 

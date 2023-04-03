@@ -7,7 +7,7 @@ namespace VeterinaryApi.Services.AppointmentService
         Task<List<GetAppointmentDto>> GetAppointments();
         Task<GetAppointmentDto> GetAppointment(int id);
         Task<GetAppointmentDto> AddNewAppointment(AddAppointmentDto appointmentDto);
-        void DeleteAppointment(int id);
-        Task<GetAppointmentDto> UpdateAppointment(int id, UpdateAppointmentDto appointmentDto);
+        Task DeleteAppointment(int id);
+        Task UpdateAppointment(int id, UpdateAppointmentDto appointmentDto);
     }
 }

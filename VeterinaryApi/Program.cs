@@ -1,6 +1,7 @@
 global using Microsoft.EntityFrameworkCore;
 using VeterinaryApi.Data;
 using VeterinaryApi.Services.AppointmentService;
+using VeterinaryApi.Services.IllnessService;
 
 namespace VeterinaryApi
 {
@@ -16,6 +17,7 @@ namespace VeterinaryApi
 
             #region MyServices
             builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+            builder.Services.AddScoped<IIllnessService, IllnessService>();
             #endregion
 
             builder.Services.AddControllers();
