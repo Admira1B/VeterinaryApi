@@ -38,7 +38,7 @@ namespace VeterinaryApi.Services.AppointmentService
 
         public async Task DeleteAppointment(int id)
         {
-            _dataContext.Remove(id);
+            _dataContext.PetOwners.Remove(id);
             await _dataContext.SaveChangesAsync();
         }
 
