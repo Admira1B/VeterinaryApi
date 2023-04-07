@@ -44,6 +44,8 @@ namespace VeterinaryApi.Controllers
             if (illness is null)
                 return NotFound();
 
+            await _service.DeleteIllness(id);
+
             return Ok();
         }
 

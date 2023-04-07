@@ -40,10 +40,11 @@ namespace VeterinaryApi.Controllers
         public async Task<ActionResult> DeleteAppointment(int id)
         {
             var appointment = await _service.GetAppointment(id);
+
             if (appointment is null)
                 return NotFound();
 
-            _service.DeleteAppointment(id);
+            await _service.DeleteAppointment(id);
             return Ok();
         }
 
