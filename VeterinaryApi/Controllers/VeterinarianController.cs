@@ -6,10 +6,10 @@ namespace VeterinaryApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class VeterinarianOwnerController : ControllerBase
+    public class VeterinarianController : ControllerBase
     {
         private readonly IVeterinarianService _service;
-        public VeterinarianOwnerController(IVeterinarianService service) { _service = service; }
+        public VeterinarianController(IVeterinarianService service) { _service = service; }
 
         [HttpGet]
         public async Task<ActionResult<List<GetVeterinarianDto>>> GetTypesOfAnimals()

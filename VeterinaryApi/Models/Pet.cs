@@ -10,6 +10,5 @@
         public Sex SexOfAnimal { get; set; }
         public PetOwner Owner { get; set; }
         public int OwnerId { get; set; }
-
     }
 }

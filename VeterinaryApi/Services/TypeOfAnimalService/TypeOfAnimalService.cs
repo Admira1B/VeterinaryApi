@@ -38,7 +38,8 @@ namespace VeterinaryApi.Services.TypeOfAnimalService
 
         public async Task DeleteTypeOfAnimal(int id)
         {
-            _dataContext.TypesOfAnimals.Remove(id);
+            var type = await _dataContext.TypesOfAnimals.FindAsync(id);
+            _dataContext.TypesOfAnimals.Remove(type!);
             await _dataContext.SaveChangesAsync();
         }
 
@@ -47,7 +48,7 @@ namespace VeterinaryApi.Services.TypeOfAnimalService
             var typeOfAnimal = await _dataContext.TypesOfAnimals.FindAsync(id);
 
             _mapper.Map(typeOfAnimalDto, typeOfAnimal);
-            typeOfAnimal.Id = id;
+            typeOfAnimal!.Id = id;
             await _dataContext.SaveChangesAsync();
         }
     }

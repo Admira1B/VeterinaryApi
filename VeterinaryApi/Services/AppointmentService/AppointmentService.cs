@@ -38,7 +38,8 @@ namespace VeterinaryApi.Services.AppointmentService
 
         public async Task DeleteAppointment(int id)
         {
-            _dataContext.PetOwners.Remove(id);
+            var appointment = await _dataContext.Appointments.FindAsync(id);
+            _dataContext.Appointments.Remove(appointment!);
             await _dataContext.SaveChangesAsync();
         }
 
@@ -47,7 +48,7 @@ namespace VeterinaryApi.Services.AppointmentService
             var appointment = await _dataContext.Appointments.FindAsync(id);
 
             _mapper.Map(appointmentDto, appointment);
-            appointment.Id = id;
+            appointment!.Id = id;
             await _dataContext.SaveChangesAsync();
         }
     }

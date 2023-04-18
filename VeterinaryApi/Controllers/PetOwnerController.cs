@@ -7,10 +7,10 @@ namespace VeterinaryApi.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class PetOwnerOwnerController : ControllerBase
+    public class PetOwnerController : ControllerBase
     {
         private readonly IPetOwnerService _service;
-        public PetOwnerOwnerController(IPetOwnerService service) { _service = service; }
+        public PetOwnerController(IPetOwnerService service) { _service = service; }
 
         [HttpGet]
         public async Task<ActionResult<List<GetPetOwnerDto>>> GetPetOwners()

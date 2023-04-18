@@ -38,7 +38,8 @@ namespace VeterinaryApi.Services.IllnessService
 
         public async Task DeleteIllness(int id)
         {
-            _dataContext.Remove(id);
+            var illness = await _dataContext.Illnesses.FindAsync(id);
+            _dataContext.Illnesses.Remove(illness!);
             await _dataContext.SaveChangesAsync();
         }
 
@@ -47,7 +48,7 @@ namespace VeterinaryApi.Services.IllnessService
             var illness = await _dataContext.Illnesses.FindAsync(id);
 
             _mapper.Map(illnessDto, illness);
-            illness.Id = id;
+            illness!.Id = id;
             await _dataContext.SaveChangesAsync();
         }
     }

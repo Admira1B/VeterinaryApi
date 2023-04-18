@@ -38,7 +38,8 @@ namespace VeterinaryApi.Services.VaccineService
 
         public async Task DeleteVaccine(int id)
         {
-            _dataContext.Vaccines.Remove(id);
+            var vaccine = await _dataContext.Vaccines.FindAsync(id);
+            _dataContext.Vaccines.Remove(vaccine!);
             await _dataContext.SaveChangesAsync();
         }
 
@@ -47,7 +48,7 @@ namespace VeterinaryApi.Services.VaccineService
             var vaccine = await _dataContext.Vaccines.FindAsync(id);
 
             _mapper.Map(vaccineDto, vaccine);
-            vaccine.Id = id;
+            vaccine!.Id = id;
             await _dataContext.SaveChangesAsync();
         }
     }

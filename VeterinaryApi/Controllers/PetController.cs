@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VeterinaryApi.Dtos.PetDto;
-using VeterinaryApi.Models;
 using VeterinaryApi.Services.PetService;
 
 namespace VeterinaryApi.Controllers

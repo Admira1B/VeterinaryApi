@@ -29,7 +29,10 @@ namespace VeterinaryApi.Maps
             #endregion
 
             #region PetMaps
-            CreateMap<GetPetDto, Pet>().ReverseMap();
+            CreateMap<Pet, GetPetDto>().
+                ForMember(dest => dest.Owner, option => option.MapFrom(src => src.Owner)).
+                ForMember(dest => dest.Type, option => option.MapFrom(src => src.Type.Name));
+
             CreateMap<UpdatePetDto, Pet>();
             CreateMap<AddPetDto, Pet>();
             #endregion
@@ -43,7 +46,7 @@ namespace VeterinaryApi.Maps
             #region TypeOfAnimalMaps
             CreateMap<GetTypeOfAnimalDto, TypeOfAnimal>().ReverseMap();
             CreateMap<UpdateTypeOfAnimalDto, TypeOfAnimal>();
-            CreateMap <AddTypeOfAnimalDto,TypeOfAnimal>();
+            CreateMap<AddTypeOfAnimalDto, TypeOfAnimal>();
             #endregion
 
             #region VaccineMaps

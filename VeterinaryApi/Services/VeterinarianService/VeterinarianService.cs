@@ -38,7 +38,8 @@ namespace VeterinaryApi.Services.VeterinarianService
 
         public async Task DeleteVeterinarian(int id)
         {
-            _dataContext.Veterinarians.Remove(id);
+            var veterinarian = await _dataContext.Veterinarians.FindAsync(id);
+            _dataContext.Veterinarians.Remove(veterinarian!);
             await _dataContext.SaveChangesAsync();
         }
 
@@ -47,7 +48,7 @@ namespace VeterinaryApi.Services.VeterinarianService
             var veterinarian = await _dataContext.Veterinarians.FindAsync(id);
 
             _mapper.Map(veterinarianDto, veterinarian);
-            veterinarian.Id = id;
+            veterinarian!.Id = id;
             await _dataContext.SaveChangesAsync();
         }
     }
